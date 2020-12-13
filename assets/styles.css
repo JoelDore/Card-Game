@@ -1,0 +1,97 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 500;
+    cursor: default;
+}
+
+body {
+    background-color: slategray;
+}
+
+/* CARD DESIGNS */
+.card {
+    width: 5rem;
+    height: 8rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.card-front {
+    position: relative;
+    font-size: 5rem;
+    padding: 0;
+}
+.card-front::before {
+    position: absolute;
+    content: attr(data-value) attr(data-suit);
+    font-size: 1.5rem;
+    top: 0;
+    left: 0.5rem;
+}
+.card-front::after {
+    position: absolute;
+    content: attr(data-value) attr(data-suit);
+    font-size: 1.5rem;
+    bottom: 0;
+    right: 0.5rem;
+    transform: rotateZ(180deg);
+}
+
+.card-back {
+    background-color: darkcyan;
+}
+
+.card-lg {
+    cursor: pointer;
+    width: 7rem;
+    height: 11rem;
+}
+
+.card.red {
+    color: crimson
+}
+
+.deck {
+    box-shadow: 2px 2px darkslategray, 
+        6px 6px darkslategray, 
+        4px 4px darkslategray;
+}
+
+.player-hand .card:hover {
+    z-index: 1;
+    transform: translateY(-5px);
+    border: 2px solid;
+}
+
+.player-hand {
+    justify-content: center;
+} 
+
+.computer-hand {
+    justify-content: center;
+    min-width: 50%;
+}
+
+.crib {
+    justify-content: center;
+    align-items: center;
+}
+
+/* DISCARD AREAS */
+.computer-discard-area {
+    justify-content: center;
+}
+
+.player-discard-area {
+    justify-content: center;
+}
+    
+.score {
+    text-align: left;
+}
